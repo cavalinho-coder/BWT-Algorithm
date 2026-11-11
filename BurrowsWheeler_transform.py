@@ -27,6 +27,22 @@ for i in range(len(startString)):
 sortedFlag = False
 
 for i in range (len(stringSteps)):
-    for j in range (len(stringSteps)):
-        if ord(stringSteps[i][0].lower()) < ord(stringSteps[j][0].lower()):
+    for j in range (len(stringSteps)-1):
+        if stringSteps[i][0].lower() < stringSteps[j][0].lower():
             stringSteps[i] , stringSteps[j] = stringSteps[j] , stringSteps[i]
+            
+finalString = []
+            
+for i in range(len(stringSteps)):
+    finalString.append(stringSteps[i][-1])    #taking the last char of each string in the list and adding it to the finalString list
+            
+print("\n\n")
+            
+for i in range(len(startString)):
+    print(f"{i+1} {stringSteps[i]}")
+    
+print("\n\n")
+print("final string: ")
+
+for i in range(len(finalString)):
+    print(f"{i+1} {finalString[i]}")
