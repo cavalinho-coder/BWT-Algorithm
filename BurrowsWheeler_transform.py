@@ -24,12 +24,10 @@ while startString[0] != "$":
 for i in range(len(startString)):
     print(f"{i+1} {stringSteps[i]}")
 
-sortedFlag = False
-
 for i in range (len(stringSteps)):
     for j in range (len(stringSteps)-1):
-        if stringSteps[i][0].lower() < stringSteps[j][0].lower():
-            stringSteps[i] , stringSteps[j] = stringSteps[j] , stringSteps[i]
+        if stringSteps[j] > stringSteps[j+1]:
+            stringSteps[j], stringSteps[j+1] = stringSteps[j+1], stringSteps[j]
             
 finalString = []
             
